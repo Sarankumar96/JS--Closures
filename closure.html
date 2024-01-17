@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body>
+    <!-- <button id="green">Green</button>
+    <button id="orange">Orange</button> -->
+</body>
+<script>
+    // document.getElementById("green").onclick=function(){
+    //     document.body.style.backgroundColor="green";
+    // }
+    // document.getElementById("orange").onclick=function(){
+    //     document.body.style.backgroundColor="orange";
+    // }
+    // function makeFun(){
+    //     const name = "Mozilla"; // This will get displayed when the function myFun is called because the function displayName and its lexical scope i.e variable name is store in myFun();
+    //     function displayName(){
+    //         console.log(name);
+    //     }
+    //     return displayName;
+    // }
+    // const myFun = makeFun();// Here as we are calling the function  the displayname function will be stored here, the takeaway is that function alone will not get stored in variable myFun along with it the whole lexical scope is stored
+    // myFun(); 
+   
+    function outer(){
+        let name ="Hello World";
+        function inner(){
+            console.log(name);
+            console.log("Focus");
+        }
+        return inner()    
+    }
+    let myfun = outer();
+    console.log(myfun);
+ 
+
+    // Take aways
+    // 1.we can store a function in a variable and call it by calling the variable name followed by parenthesis.
+    // 2.when we return a function not only the function but its lexical scope will get stored in the the variable i.e in this case not
+    // only the function displayName() gets stored in variable myFun but its lexical scope i.e const name ="Mozilla" gets stored in that.
+
+
+</script>
+</html>
